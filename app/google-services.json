@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "942345404727",
+    "project_id": "stacksave-4b9f0",
+    "storage_bucket": "stacksave-4b9f0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942345404727:android:e0057fdf1e85ae58d99ab2",
+        "android_client_info": {
+          "package_name": "com.example.stacksaveapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942345404727-0osd0vook3mfn3jafscqp3pps81vfrbd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2p-htXX586Z9ojdH4ENNxsAZAbbhGYKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "942345404727-0osd0vook3mfn3jafscqp3pps81vfrbd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942345404727:android:5450d737f63224dcd99ab2",
+        "android_client_info": {
+          "package_name": "za.co.stacksave"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942345404727-0osd0vook3mfn3jafscqp3pps81vfrbd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2p-htXX586Z9ojdH4ENNxsAZAbbhGYKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "942345404727-0osd0vook3mfn3jafscqp3pps81vfrbd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
