@@ -1,4 +1,4 @@
-package com.example.stacksave.ui
+package com.example.stacksaveapp.ui.theme
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*

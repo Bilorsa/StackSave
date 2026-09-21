@@ -1,4 +1,4 @@
-package com.example.stacksave
+package com.example.stacksaveapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -12,7 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.stacksave.ui.*
+import com.example.stacksaveapp.ui.theme.*
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,7 +66,7 @@ fun StackSaveApp() {
                 WalletScreen(
                     pendingAmount = 412.50,
                     availableAmount = 1208.00,
-                    transactions = emptyList()
+                    transactions = emptyList<TransactionItem>()
                 )
             }
             composable("Profile") {
@@ -84,4 +84,9 @@ fun StackSaveApp() {
             }
         }
     }
+}
+
+@Composable
+fun StackSaveBottomNav(currentRoute: String, onNavigate: (String) -> Unit) {
+    TODO("Not yet implemented")
 }
