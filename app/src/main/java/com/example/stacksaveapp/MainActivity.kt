@@ -25,6 +25,9 @@ import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.NavigationBarItem
 
 
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.compose.runtime.collectAsState
+import com.example.stacksaveapp.viewmodel.AuthViewModel
 import com.example.stacksaveapp.ui.theme.*
 
 class MainActivity : ComponentActivity() {
@@ -65,7 +68,15 @@ fun StackSaveApp() {
             modifier = Modifier.padding(innerPadding)
         ) {
             composable("Welcome") {
-                WelcomeScreen(onLoginClick = { navController.navigate("Home") })
+                val authViewModel: AuthViewModel = viewModel()
+                val authState by authViewModel.authState.collectAsState()
+                
+                WelcomeScreen(
+                    authState = authState,
+                    onLoginSubmit = { email, pass -> authViewModel.loginUser(email, pass) },
+                    onRegisterSubmit = { email, pass -> authViewModel.registerUser(email, pass, emptyList()) },
+                    onAuthSuccess = { navController.navigate("Home") }
+                )
             }
             composable("Home") {
                 HomeFeedScreen(

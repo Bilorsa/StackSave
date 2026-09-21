@@ -44,17 +44,18 @@ class AuthViewModel(
                 _authState.value = AuthState.Error(error.message ?: "Registration failed")
             }
         }
-        fun loginUser(email: String, pass: String) {
-            _authState.value = AuthState.Loading
+    }
 
-            viewModelScope.launch {
-                val result = authRepository.loginWithEmail(email, pass)
+    fun loginUser(email: String, pass: String) {
+        _authState.value = AuthState.Loading
 
-                result.onSuccess { userId ->
-                    _authState.value = AuthState.Success(userId)
-                }.onFailure { error ->
-                    _authState.value = AuthState.Error(error.message ?: "Login failed")
-                }
+        viewModelScope.launch {
+            val result = authRepository.loginWithEmail(email, pass)
+
+            result.onSuccess { userId ->
+                _authState.value = AuthState.Success(userId)
+            }.onFailure { error ->
+                _authState.value = AuthState.Error(error.message ?: "Login failed")
             }
         }
     }
