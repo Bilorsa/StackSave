@@ -1,11 +1,13 @@
-package com.example.stacksaveapp.ui.theme
+package com.example.stacksave.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+val BrandPurple = Color(0xFF5B3DF5)
+val BrandIndigo = Color(0xFF3F51B5)
+val BackgroundLight = Color(0xFFF8F9FA)
+val SurfaceWhite = Color(0xFFFFFFFF)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+// Status colors for the Wallet screen[cite: 1]
+val PendingAmber = Color(0xFFFFF8E1)
+val ConfirmedGreen = Color(0xFFE8F5E9)
+val TextDark = Color(0xFF1E1E1E)

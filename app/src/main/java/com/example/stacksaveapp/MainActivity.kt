@@ -3,8 +3,13 @@ package com.example.stacksaveapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Icon
+import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -12,6 +17,14 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.LocalOffer
+import androidx.compose.material.icons.filled.AccountBalanceWallet
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material3.NavigationBarItem
+
+
 import com.example.stacksaveapp.ui.theme.*
 
 class MainActivity : ComponentActivity() {
@@ -78,6 +91,17 @@ fun StackSaveApp() {
                     weeklyGoalProgress = 0.8f
                 )
             }
+            composable("Deals") {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = androidx.compose.ui.Alignment.Center
+                ) {
+                    androidx.compose.material3.Text(
+                        text = "Deals Screen",
+                        style = androidx.compose.material3.MaterialTheme.typography.headlineMedium
+                    )
+                }
+            }
             // The CheckoutAssist WebView would be triggered when tapping a deal on the Home screen
             composable("CheckoutAssist") {
                 CheckoutAssistWebView(cartUrl = "https://example.com/cart", couponCode = "SAVE15")
@@ -88,5 +112,30 @@ fun StackSaveApp() {
 
 @Composable
 fun StackSaveBottomNav(currentRoute: String, onNavigate: (String) -> Unit) {
-    TODO("Not yet implemented")
+    NavigationBar {
+        NavigationBarItem(
+            selected = currentRoute == "Home",
+            onClick = { onNavigate("Home") },
+            icon = { Icon(Icons.Filled.Home, contentDescription = "Home") },
+            label = { Text("Home") }
+        )
+        NavigationBarItem(
+            selected = currentRoute == "Deals",
+            onClick = { onNavigate("Deals") },
+            icon = { Icon(Icons.Filled.LocalOffer, contentDescription = "Deals") },
+            label = { Text("Deals") }
+        )
+        NavigationBarItem(
+            selected = currentRoute == "Wallet",
+            onClick = { onNavigate("Wallet") },
+            icon = { Icon(Icons.Filled.AccountBalanceWallet, contentDescription = "Wallet") },
+            label = { Text("Wallet") }
+        )
+        NavigationBarItem(
+            selected = currentRoute == "Profile",
+            onClick = { onNavigate("Profile") },
+            icon = { Icon(Icons.Filled.Person, contentDescription = "Profile") },
+            label = { Text("Profile") }
+        )
+    }
 }
